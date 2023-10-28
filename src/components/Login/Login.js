@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../../firebase';
 import { Link, useNavigate } from 'react-router-dom';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import './Login.module.css';
 
 // Define the Login component
@@ -13,6 +14,8 @@ function Login() {
     const [error, setError] = useState('');
     const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
     const [forgotPassword, setForgotPassword] = useState(false);
+    const [emailAuthSuccess, setEmailAuthSuccess] = useState(false);
+    const [googleAuthSuccess, setGoogleAuthSuccess] = useState(false);
     // Define a navigate function using the useNavigate hook from react-router-dom
     const navigate = useNavigate();
 
@@ -29,109 +32,94 @@ function Login() {
 
             // Use Firebase's signInWithEmailAndPassword function to sign in the user
             signInWithEmailAndPassword(auth, email, password)
-                .then(() => {
-                    setSubmitButtonDisabled(false);
-                    // Navigate to the home page upon successful login
-                    navigate('/resume-it');
+                .then((userCredential) => {
+                    // Signed in
+                    const user = userCredential.user;
+                    console.log(user);
+                    setEmailAuthSuccess(true);
+                    if (googleAuthSuccess) {
+                        navigate('/Resume-it');
+                    }
                 })
                 .catch((error) => {
-                    setSubmitButtonDisabled(false);
-                    console.error('Error logging in:', error);
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.error('Error signing in:', error);
                     setError('Invalid email or password. Please try again.');
+                    setSubmitButtonDisabled(false);
                 });
         }
     };
 
-    // Define a function to handle forgot password form submission
-    const handleForgotPassword = (event) => {
-        event.preventDefault();
-
-        // Check if email field is filled out
-        if (!email) {
-            setError('Please enter your email');
-        } else {
-            setError('');
-            setSubmitButtonDisabled(true);
-
-            // Use Firebase's sendPasswordResetEmail function to send a password reset email to the user
-            sendPasswordResetEmail(auth, email)
-                .then(() => {
-                    setSubmitButtonDisabled(false);
-                    setError('Password reset email sent. Please check your inbox.');
-                })
-                .catch((error) => {
-                    setSubmitButtonDisabled(false);
-                    console.error('Error sending password reset email:', error);
-                    setError('Invalid email. Please try again.');
-                });
-        }
+    // Define a function to handle Google sign in
+    const handleGoogleSignIn = () => {
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+                setGoogleAuthSuccess(true);
+                if (emailAuthSuccess) {
+                    navigate('/Resume-it');
+                } else {
+                    navigate('/Resume-it');
+                }
+            
+            })
+            .catch((error) => {
+                console.error('Error signing in with Google:', error);
+                setError('Error signing in with Google. Please try again.');
+            });
     };
 
-    // Render the Login component
+    // Define a function to handle forgot password link click
+    const handleForgotPassword = () => {
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                console.log('Password reset email sent');
+                setForgotPassword(false);
+                setError('Password reset email sent. Please check your inbox.');
+            })
+            .catch((error) => {
+                console.error('Error sending password reset email:', error);
+                setError('Error sending password reset email. Please try again.');
+            });
+    };
+
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col-md-6">
-                    <div className="card">
-                        {forgotPassword ? (
-                            <form onSubmit={handleForgotPassword} className="box">
-                                <h1>Forgot Password</h1>
-                                {error && <p className="text-danger">{error}</p>}
-                                <input
-                                    type="text"
-                                    name="email"
-                                    placeholder="Email"
-                                    value={email}
-                                    onChange={(event) => setEmail(event.target.value)}
-                                />
-                                <input
-                                    type="submit"
-                                    name=""
-                                    value="Send Password Reset Email"
-                                    disabled={submitButtonDisabled}
-                                />
-                                <p className="text-muted">
-                                    Remembered your password? <button onClick={() => setForgotPassword(false)}>Login</button>
-                                </p>
-                            </form>
-                        ) : (
-                            <form onSubmit={handleSubmit} className="box">
-                                <h1>Login</h1>
-                                {error && <p className="text-danger">{error}</p>}
-                                <input
-                                    type="text"
-                                    name="email"
-                                    placeholder="Email"
-                                    value={email}
-                                    onChange={(event) => setEmail(event.target.value)}
-                                />
-                                <input
-                                    type="password"
-                                    name="password"
-                                    placeholder="Password"
-                                    value={password}
-                                    onChange={(event) => setPassword(event.target.value)}
-                                />
-                                <input
-                                    type="submit"
-                                    name=""
-                                    value="Login"
-                                    disabled={submitButtonDisabled}
-                                />
-                                <p className="text-muted">
-                                    Don't have an account? <Link to="/signup">Sign up</Link>
-                                </p>
-                                <p className="text-muted">
-                                    Forgot your password? <button onClick={() => setForgotPassword(true)}>Reset Password</button>
-                                </p>
-                            </form>
-                        )}
-                    </div>
+        <div>
+            <form onSubmit={handleSubmit}>
+                <label>
+                    Email:
+                    <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
+                </label>
+                <br />
+                <label>
+                    Password:
+                    <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
+                </label>
+                <br />
+                <button type="submit" disabled={submitButtonDisabled}>Log in</button>
+            </form>
+            <p><Link to="/signup">Don't have an account? Sign up</Link></p>
+            <p><button onClick={() => setForgotPassword(true)}>Forgot password?</button></p>
+            {forgotPassword && (
+                <div>
+                    <p>Enter your email address to reset your password:</p>
+                    <form onSubmit={handleForgotPassword}>
+                        <label>
+                            Email:
+                            <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
+                        </label>
+                        <br />
+                        <button type="submit">Reset password</button>
+                    </form>
                 </div>
-            </div>
+            )}
+            <button onClick={handleGoogleSignIn}>Log in with Google</button>
+            {error && <p>{error}</p>}
         </div>
     );
-}
+};
 
-// Export the Login component as the default export of this module
 export default Login;

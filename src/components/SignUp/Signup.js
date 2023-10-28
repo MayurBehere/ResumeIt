@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { createUserWithEmailAndPassword , updateProfile } from 'firebase/auth';
 import { auth } from '../../firebase';
 import { Link , useNavigate  } from 'react-router-dom';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import './Signup.module.css'
 
 // Defining the Signup component
@@ -48,6 +49,20 @@ function Signup() {
     }
   };
 
+  const handleGoogleSignIn = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate('/login');
+      })
+      .catch((error) => {
+        console.error('Error signing in with Google:', error);
+        setError('Error signing in with Google. Please try again.');
+      });
+  };
+
   // Rendering the Signup component
   return (
     <div>
@@ -71,7 +86,13 @@ function Signup() {
                 {/* Error message */}
                 {error && <p className="text-danger">{error}</p>}
               </form>
-
+              <div>
+                <form onSubmit={handleSubmit}>
+                  {/* Form fields */}
+                  <button type="submit">Sign up</button>
+                </form>
+                <button onClick={handleGoogleSignIn}>Sign up with Google</button>
+              </div>
               {/* Login link */}
               <p className="text-muted mt-3">Already have an account? <Link to="/login">Login</Link></p>
             </div>
