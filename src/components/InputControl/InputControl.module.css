@@ -1,0 +1,33 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label{
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+input{
+    padding: 10px 12px;
+    border-radius: 5px;
+    border: 2px solid #ff54bd;
+    font-size: 1rem;
+    outline: none;
+}
+
+input:hover{
+    border: 2px solid #ff54bd;
+}
+
+input:focus{
+    border: 2px solid #ff54bd;
+}
+
+.body{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
