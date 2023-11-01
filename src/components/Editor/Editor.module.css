@@ -67,16 +67,16 @@
     display: flex;
     gap: 5px;
     align-items: center;
-    padding: 4px 8px;
+    padding: 2px 8px;
     background-color:rgb(52, 52, 52);
-    border-radius: 25px;
+    border-radius: 20px;
     color: black;
 }
 
 .chip p{
-    font-weight: 500;
+    font-weight: 300;
     line-height: 1rem;
-    margin-top: 15px;
+    margin-top: 16px;
     color: #ffffff;
 }
 
