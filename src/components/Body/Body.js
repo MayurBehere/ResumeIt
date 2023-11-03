@@ -19,43 +19,43 @@ import { useState } from 'react';
         const[resumeInformation, setResumeInformation] = useState({
           [sections.basicInfo]: {
           id: sections.basicInfo,
-          title: sections.basicInfo,
+          sectionTitle: sections.basicInfo,
           detail:{}                        //detail is an object basic info has one information
           },
 
           [sections.workExp]: {
           id: sections.workExp,
-          title: sections.workExp,
+          sectionTitle: sections.workExp,
           details:[]                      //details is an array work experience has multiple information and similar for other sections
           },
 
           [sections.projects]: {
           id: sections.projects,
-          title: sections.projects,
+          sectionTitle: sections.projects,
           details:[]
           },
 
           [sections.education]: {
           id: sections.education,
-          title: sections.education,
+          sectionTitle: sections.education,
           details:[]
           },
 
           [sections.achievements]: {
           id: sections.achievements,
-          title: sections.achievements,
+          sectionTitle: sections.achievements,
           points:[]
           },      
 
           [sections.skills]: {
           id: sections.skills,
-          title: sections.skills,
+          sectionTitle: sections.skills,
           points:[]
           },
 
           [sections.other]: {
           id: sections.other,
-          title: sections.other,
+          sectionTitle: sections.other,
           detail:""
           },
         });

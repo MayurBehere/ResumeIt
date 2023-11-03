@@ -34,6 +34,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding-top: 0;
 }
 
 .detail{
@@ -89,4 +90,45 @@
 
 .chips .active{
     background-color: #b724ba;
+}
+
+.body button{
+    padding: 8px 16px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #f03ff3;
+    color: antiquewhite;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.body button:hover{
+    transform: scale(1.1);
+}
+
+.body button::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+.body button:hover::before{
+    width: 100%;
+    height: 500px;
+}
+
+.body button:active::before{
+    width: 100px;
+    height: 100px;
 }
