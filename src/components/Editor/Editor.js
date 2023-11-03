@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './Editor.module.css'
 import InputControl from '../InputControl/InputControl'
 import { X } from 'react-feather';
+import { act } from 'react-dom/test-utils';
 
 function Editor(props) {
     const sections = props.sections;
-    
+    const information = props.information;
     const[activeSectionKey, setActiveSectionKey] = React.useState(Object.keys(sections)[0]); 
-
+    const [activeInformation, setActiveInformation] = React.useState(information[sections[Object.keys(sections)[0]]]);   // data feded should be in the active section
+    
+    
     const workExpBody = (
         <div className={styles.detail}>
             <div className={styles.row}>
@@ -135,6 +138,9 @@ function Editor(props) {
             }
     }
 
+    useEffect(() => {
+        setActiveInformation(information[sections[activeSectionKey]]);
+    }, [activeSectionKey]);
 
     return (
         <div className={styles.container}>
@@ -154,15 +160,16 @@ function Editor(props) {
 
                 <div className={styles.chips}>
                 
-                <div className={styles.chip}>
-                <p> Project 1</p>  
-                <X />  
-                </div>       
-                <div className={styles.chip}>
-                <p> Project 2</p>  
-                <X />  
-                </div>  
-                
+                       {activeInformation?.details?
+                       
+                        activeInformation.details.map((item,index) => (
+                            <div className={styles.chip} key={item.title+index}>
+                                <p>{sections[activeSectionKey]} {index+1}</p>
+                                <X />
+                            </div>
+                        )):""}
+                                          
+                        
                </div>      
                     
                 
