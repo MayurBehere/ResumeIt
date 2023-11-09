@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Reem Kufi", sans-serif !important;
+  }
+
+  .Main-Container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 ;
+    height: 100px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    border-bottom: 2px solid  rgb(255, 0, 204);
+   }

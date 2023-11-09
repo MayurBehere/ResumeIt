@@ -1,0 +1,25 @@
+
+.feature {
+    padding: 50px;
+   
+}
+
+.feature-text {
+    font-size: 50px;
+    font-weight: 700;
+    color: rgb(255, 0, 204);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.card {
+    transition: transform 0.2s ease-in-out;
+    color: rgb(255, 255, 255);
+    background-color: black;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    background-color: rgb(255, 0, 204);
+}

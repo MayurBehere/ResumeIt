@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Reem Kufi", sans-serif !important;
+  }
+ 
+.container{
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    height: 100px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    border-bottom: 2px solid #c309c6;
+}
+
+.container button {
+  background-color: white;
+  color: #c309c6;
+  border: 2px solid #c309c6;
+}
+
+.container button:hover {
+  background-color: rgb(255, 0, 242);
+  border-color: #c309c6;
+}

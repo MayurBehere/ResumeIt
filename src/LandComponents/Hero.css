@@ -1,0 +1,22 @@
+.Main {
+    color: rgb(255, 0, 204);
+    font-size: 75px;
+}
+
+.Resume{
+    margin: 0;
+    border-bottom: 2px solid rgb(255, 0, 204);
+}
+
+.btn-primary {
+    background-color: #fff;
+    color: rgb(255, 0, 204);
+    border: 2px solid rgb(255, 0, 204);
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.btn-primary:hover {
+    background-color: rgb(231, 13, 202);
+    color: #fff;
+}
