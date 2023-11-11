@@ -1,7 +1,7 @@
 import React from 'react'
 import navlogo from './navlogo.jpg'
 import './Navbar.css'
-
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <div className="container">
@@ -13,7 +13,7 @@ const Navbar = () => {
           <div className="d-flex">
             <button className="btn btn-secondary me-2" type="button" style={{ outline: 'none' }}>Contact Us</button>
             <button className="btn btn-secondary me-2" type="button" style={{ outline: 'none' }}>About Us</button>
-            <button className="btn btn-secondary" type="button" style={{ outline: 'none' }}>Sign Up</button>
+           <Link to="/signup"> <button className="btn btn-secondary" type="button" style={{ outline: 'none' }}>Sign Up</button></Link>
           </div>
         </div>
       </nav>

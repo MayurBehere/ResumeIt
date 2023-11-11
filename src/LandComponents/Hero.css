@@ -13,10 +13,11 @@
     color: rgb(255, 0, 204);
     border: 2px solid rgb(255, 0, 204);
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 10px;
 }
 
 .btn-primary:hover {
     background-color: rgb(231, 13, 202);
     color: #fff;
 }
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Roboto+Slab&display=swap');

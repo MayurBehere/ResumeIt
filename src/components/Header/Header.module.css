@@ -21,7 +21,7 @@
     font-weight: 600;
     letter-spacing: 1px;
     line-height: 4.3rem;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Roboto Slab', serif !important;
 }
 
 .heading span{
@@ -29,7 +29,7 @@
         line-height: calc(10px + 7vh);
         text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff, 0 0 10px #ff00ff, 0 0 98px #ff00ff;
         color: #6B0C72;
-        font-family: 'Dancing Script', cursive;
+        font-family: 'Dancing Script', cursive !important;
         text-align: center;
         animation: blink 12s infinite;
         -webkit-animation: blink 12s infinite;
