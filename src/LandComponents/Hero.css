@@ -9,8 +9,8 @@
 }
 
 .btn-primary {
-    background-color: #fff;
-    color: rgb(255, 0, 204);
+    background-color: rgb(255, 0, 204);
+    color: #fff;
     border: 2px solid rgb(255, 0, 204);
     border-radius: 5px;
     padding: 10px;
@@ -20,4 +20,5 @@
     background-color: rgb(231, 13, 202);
     color: #fff;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Roboto+Slab&display=swap');
