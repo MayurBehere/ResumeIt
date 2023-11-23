@@ -66,25 +66,25 @@ function Signup() {
   // Rendering the Signup component
   return (
     <div>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6">
-            <div className="card">
-              <form onSubmit={handleSubmit} className="box">
+      <div id="container">
+        <div id="row">
+          <div id="col-md-6">
+            <div id="card">
+              <form onSubmit={handleSubmit} id="box">
                 <h1>Register</h1>
-                <p className="text-muted">Please enter your details below!</p>
+                <p id="text-muted">Please enter your details below!</p>
 
                 {/* Form fields */}
-                <input type="text" name="name" placeholder="Name" value={name} onChange={(event) => setName(event.target.value)} />
-                <input type="email" name="email" placeholder="Email" value={email} onChange={(event) => setEmail(event.target.value)} />
-                <input type="password" name="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)} />
-                <input type="password" name="confirmPassword" placeholder="Confirm Password" value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} />
+                <input type="text" id="name" placeholder="Name" value={name} onChange={(event) => setName(event.target.value)} />
+                <input type="email" id="email" placeholder="Email" value={email} onChange={(event) => setEmail(event.target.value)} />
+                <input type="password" id="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)} />
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} />
 
                 {/* Submit button */}
                 <input type="submit" value="Register" />
 
                 {/* Error message */}
-                {error && <p className="text-danger">{error}</p>}
+                {error && <p id="text-danger">{error}</p>}
               </form>
               <div>
                 <form onSubmit={handleSubmit}>
@@ -94,7 +94,7 @@ function Signup() {
                 <button onClick={handleGoogleSignIn}>Sign up with Google</button>
               </div>
               {/* Login link */}
-              <p className="text-muted mt-3">Already have an account? <Link to="/login">Login</Link></p>
+              <p id="text-muted mt-3">Already have an account? <Link to="/login">Login</Link></p>
             </div>
           </div>
         </div>
