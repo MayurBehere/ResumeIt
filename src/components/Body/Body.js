@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./Body.module.css";
+import ReactToPrint from "react-to-print";
 import { ArrowDown } from "react-feather";
 import Editor from "../Editor/Editor";
-import { useState } from "react";
+import { useState ,useRef} from "react";
+import Resume from "../Resume/Resume";
 
 function Body() {
   const colors = ["#239ce2", "#48bb78", "#0bc5ea", "#a0aec0", "#ed8936"];
@@ -15,7 +17,8 @@ function Body() {
     skills: "Skills",
     other: "Other",
   };
-
+  const resumeRef = useRef();
+  const [activeColor, setActiveColor] = useState(colors[0]);
   const [resumeInformation, setResumeInformation] = useState({
     [sections.basicInfo]: {
       id: sections.basicInfo,
@@ -73,10 +76,16 @@ function Body() {
             />
           ))}
         </div>
-        <button>
-          Download
-          <ArrowDown />
-        </button>
+        <ReactToPrint
+          trigger={() => {
+            return (
+              <button>
+                Download <ArrowDown />
+              </button>
+            );
+          }}
+          content={() => resumeRef.current}
+        />
       </div>
       <div className={styles.main}>
         <Editor
@@ -84,6 +93,12 @@ function Body() {
          information={resumeInformation} 
          setInformation={setResumeInformation}
          />
+         <Resume
+          ref={resumeRef}
+          sections={sections}
+          information={resumeInformation}
+          activeColor={activeColor}
+        />
       </div>
     </div>
   );

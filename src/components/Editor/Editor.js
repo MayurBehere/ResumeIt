@@ -335,6 +335,32 @@ const [activeSectionKey, setActiveSectionKey] = useState(
           defaultValue={values.points ? values.points[4] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 4)}
         />
+        <InputControl
+          placeholder="line 6"
+          defaultValue={values.points ? values.points[5] : ""}
+          onChange={(event) => handlePointUpdate(event.target.value, 4)}
+        />
+        <InputControl
+          placeholder="line 7"
+          defaultValue={values.points ? values.points[6] : ""}
+          onChange={(event) => handlePointUpdate(event.target.value, 4)}
+        />
+        <InputControl
+          placeholder="line 8"
+          defaultValue={values.points ? values.points[7] : ""}
+          onChange={(event) => handlePointUpdate(event.target.value, 4)}
+        />
+        <InputControl
+          placeholder="line 9"
+          defaultValue={values.points ? values.points[8] : ""}
+          onChange={(event) => handlePointUpdate(event.target.value, 4)}
+        />
+        <InputControl
+          placeholder="line 10"
+          defaultValue={values.points ? values.points[9] : ""}
+          onChange={(event) => handlePointUpdate(event.target.value, 4)}
+        />
+        
       </div>
     </div>
   );
