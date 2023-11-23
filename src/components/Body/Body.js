@@ -70,9 +70,12 @@ function Body() {
         <div className={styles.colors}>
           {colors.map((item) => (
             <span
-              key={item}
-              className={styles.color}
-              style={{ backgroundColor: item }}
+            key={item}
+            style={{ backgroundColor: item }}
+            className={`${styles.color} ${
+              activeColor === item ? styles.active : ""
+            }`}
+            onClick={() => setActiveColor(item)}
             />
           ))}
         </div>

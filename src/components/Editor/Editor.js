@@ -498,6 +498,20 @@ const [activeSectionKey, setActiveSectionKey] = useState(
         }));
         break;
       }
+
+      case sections.skills: {
+        const tempPoints = values.points;
+
+        props.setInformation((prev) => ({
+          ...prev,
+          [sections.skills]: {
+            ...prev[sections.skills],
+            points: tempPoints,
+            sectionTitle,
+          },
+        }));
+        break;
+      }
     
       case sections.other: {
         const tempDetail = values.other;
