@@ -230,23 +230,9 @@ const Resume = forwardRef((props, ref) => {
             onDragOver={() => seTarget(info.skills?.id)}
             onDragEnd={() => setSource(info.skills?.id)}
             className={`${styles.section} ${
-              info.skill?.sectionTitle ? "" : styles.hidden
+              info.skills?.sectionTitle ? "" : styles.hidden
             }`}
           >
-            <div className={styles.sectionTitle}>{info.skills?.sectionTitle}</div>
-            <div className={styles.content}>
-              {info.skill?.points?.length > 0 ? (
-                <ul className={styles.numbered}>
-                  {info.skill?.points?.map((elem, index) => (
-                    <li className={styles.point} key={elem + index}>
-                      {elem}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <span />
-              )}
-            </div>
           </div>
         ),
         [sections.other]: (
@@ -299,6 +285,10 @@ const Resume = forwardRef((props, ref) => {
       [sections.workExp, sections.achievements, sections.other],
     ]);
   }, []);
+
+  useEffect(() => {
+    console.log(info.achievements);
+}, [info.achievements]);
 
   useEffect(() => {
     swapSourceTarget(source, target);
