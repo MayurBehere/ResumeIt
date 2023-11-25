@@ -7,7 +7,7 @@ import { useState ,useRef} from "react";
 import Resume from "../Resume/Resume";
 
 function Body() {
-  const colors = ["#239ce2", "#48bb78", "#0bc5ea", "#a0aec0", "#ed8936"];
+  const colors = ["#F03FF3", "#228B22", "#0bc5ea", "#5A5A5A", "#00`+++0000"];
   const sections = {
     basicInfo: "Basic Info",
     workExp: "Work Experience",

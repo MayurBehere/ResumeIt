@@ -501,7 +501,7 @@ const [activeSectionKey, setActiveSectionKey] = useState(
 
             case sections.skills: {
               const tempPoints = values.points;
-
+        
               props.setInformation((prev) => ({
                 ...prev,
                 [sections.skills]: {
