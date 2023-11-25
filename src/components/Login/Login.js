@@ -107,9 +107,9 @@ function Login() {
             <p><Link to="/signup">Don't have an account? Sign up</Link></p>
             <p><button onClick={() => setForgotPassword(true)}>Forgot password?</button></p>
             {forgotPassword && (
-                <div>
+                <div >
                     <p>Enter your email address to reset your password:</p>
-                    <form onSubmit={handleForgotPassword}>
+                    <form onSubmit={handleForgotPassword} className='forgot' >
                         <label>
                             Email:
                             <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
