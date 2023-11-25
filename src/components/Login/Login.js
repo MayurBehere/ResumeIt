@@ -104,8 +104,8 @@ function Login() {
                 <br />
                 <button className='log-btn' type="submit" disabled={submitButtonDisabled}>Log in</button>
             </form>
-            <p><Link to="/signup">Don't have an account? Sign up</Link></p>
-            <p><button onClick={() => setForgotPassword(true)}>Forgot password?</button></p>
+            <p style={{display:'flex',justifyContent:'center',marginTop:'10px'}}><Link to="/signup" >Don't have an account? Sign up</Link></p>
+            <p style={{display:'flex',justifyContent:'center',marginTop:'10px'}}><button onClick={() => setForgotPassword(true)}>Forgot password?</button></p>
             {forgotPassword && (
                 <div >
                     <p>Enter your email address to reset your password:</p>

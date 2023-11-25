@@ -92,7 +92,7 @@ function Signup() {
 
               </div>
               {/* Login link */}
-              <p id="text-muted mt-3">Already have an account? <Link to="/login">Login</Link></p>
+              <p id="text-muted mt-3"style={{display:'flex',justifyContent:'center',marginTop:'10px'}}>Already have an account? <Link to="/login">Login</Link></p>
             </div>
           </div>
         </div>

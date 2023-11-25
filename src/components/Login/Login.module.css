@@ -57,10 +57,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
- p {
-  margin-top: 10px;
-  text-align: center;
-}
 
 a {
   color: #007bff;
