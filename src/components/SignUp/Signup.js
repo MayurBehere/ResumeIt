@@ -75,23 +75,21 @@ function Signup() {
                 <p id="text-muted">Please enter your details below!</p>
 
                 {/* Form fields */}
-                <input type="text" id="name" placeholder="Name" value={name} onChange={(event) => setName(event.target.value)} />
-                <input type="email" id="email" placeholder="Email" value={email} onChange={(event) => setEmail(event.target.value)} />
-                <input type="password" id="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)} />
-                <input type="password" id="confirmPassword" placeholder="Confirm Password" value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} />
-
-                {/* Submit button */}
-                <input type="submit" value="Register" />
-
+                <input type="text" id="name" placeholder="Name" value={name} onChange={(event) => setName(event.target.value)} style={{margin:'3px' }}/>
+                <input type="email" id="email" placeholder="Email" value={email} onChange={(event) => setEmail(event.target.value)}style={{margin:'3px' }} />
+                <input type="password" id="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)} style={{margin:'3px' }}/>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} style={{margin:'3px' }}/>
+              
                 {/* Error message */}
                 {error && <p id="text-danger">{error}</p>}
-              </form>
-              <div>
-                <form onSubmit={handleSubmit}>
+           
                   {/* Form fields */}
-                  <button type="submit">Sign up</button>
-                </form>
-                <button onClick={handleGoogleSignIn}>Sign up with Google</button>
+                  <button type="submit" onSubmit={handleSubmit} style={{ marginTop:'20px',padding:'5px' }}>Sign up</button>
+                  <button onClick={handleGoogleSignIn } style={{marginTop:'5px'}}>Sign up with Google</button>
+                  </form>
+              <div>
+              
+
               </div>
               {/* Login link */}
               <p id="text-muted mt-3">Already have an account? <Link to="/login">Login</Link></p>

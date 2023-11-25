@@ -87,8 +87,11 @@ function Login() {
     };
 
     return (
-        <div>
+        
+<>
+
             <form onSubmit={handleSubmit}>
+            <h1>Log in</h1>
                 <label>
                     Email:
                     <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
@@ -99,7 +102,7 @@ function Login() {
                     <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
                 </label>
                 <br />
-                <button type="submit" disabled={submitButtonDisabled}>Log in</button>
+                <button className='log-btn' type="submit" disabled={submitButtonDisabled}>Log in</button>
             </form>
             <p><Link to="/signup">Don't have an account? Sign up</Link></p>
             <p><button onClick={() => setForgotPassword(true)}>Forgot password?</button></p>
@@ -116,10 +119,13 @@ function Login() {
                     </form>
                 </div>
             )}
-            <button onClick={handleGoogleSignIn}>Log in with Google</button>
+            <button onClick={handleGoogleSignIn} style={{ display: 'block', margin: '0 auto' ,}}>Log in with Google</button>
             {error && <p>{error}</p>}
-        </div>
-    );
+            </>
+    ); 
+    
 };
 
 export default Login;
+
+
