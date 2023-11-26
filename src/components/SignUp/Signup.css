@@ -1,0 +1,11 @@
+.aloo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.form1{
+margin-top: 80px;
+}

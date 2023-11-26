@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword , updateProfile } from 'firebase/auth';
 import { auth } from '../../firebase';
 import { Link , useNavigate  } from 'react-router-dom';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import './Signup.module.css'
+import './Signup.css'
 
 // Defining the Signup component
 function Signup() {
@@ -70,7 +70,7 @@ function Signup() {
         <div id="row">
           <div id="col-md-6">
             <div id="card">
-              <form onSubmit={handleSubmit} id="box">
+              <form onSubmit={handleSubmit} className='form1'>
                 <h1>Register</h1>
                 <p id="text-muted">Please enter your details below!</p>
 
@@ -84,8 +84,9 @@ function Signup() {
                 {error && <p id="text-danger">{error}</p>}
            
                   {/* Form fields */}
-                  <button type="submit" onSubmit={handleSubmit} style={{ marginTop:'20px',padding:'5px' }}>Sign up</button>
-                  <button onClick={handleGoogleSignIn } style={{marginTop:'5px'}}>Sign up with Google</button>
+                  <div className='aloo'>
+                  <button type="submit" onSubmit={handleSubmit} className='bt2'>Sign up</button>
+                  <button onClick={handleGoogleSignIn } className='bt1'>Sign up with Google</button></div>
                   </form>
               <div>
               

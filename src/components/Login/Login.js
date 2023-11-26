@@ -1,17 +1,20 @@
 // Import necessary modules and components
-import React, { useState } from 'react';
-import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
-import { auth } from '../../firebase';
-import { Link, useNavigate } from 'react-router-dom';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import './Login.module.css';
+import React, { useState } from "react";
+import {
+    signInWithEmailAndPassword,
+    sendPasswordResetEmail,
+} from "firebase/auth";
+import { auth } from "../../firebase";
+import { Link, useNavigate } from "react-router-dom";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import "./login.css";
 
 // Define the Login component
 function Login() {
     // Define state variables for email, password, error message, and submit button status
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
     const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
     const [forgotPassword, setForgotPassword] = useState(false);
     const [emailAuthSuccess, setEmailAuthSuccess] = useState(false);
@@ -25,9 +28,9 @@ function Login() {
 
         // Check if email and password fields are filled out
         if (!email || !password) {
-            setError('Please fill in all fields');
+            setError("Please fill in all fields");
         } else {
-            setError('');
+            setError("");
             setSubmitButtonDisabled(true);
 
             // Use Firebase's signInWithEmailAndPassword function to sign in the user
@@ -38,14 +41,14 @@ function Login() {
                     console.log(user);
                     setEmailAuthSuccess(true);
                     if (googleAuthSuccess) {
-                        navigate('/Resume-it');
+                        navigate("/Resume-it");
                     }
                 })
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
-                    console.error('Error signing in:', error);
-                    setError('Invalid email or password. Please try again.');
+                    console.error("Error signing in:", error);
+                    setError("Invalid email or password. Please try again.");
                     setSubmitButtonDisabled(false);
                 });
         }
@@ -60,15 +63,14 @@ function Login() {
                 console.log(user);
                 setGoogleAuthSuccess(true);
                 if (emailAuthSuccess) {
-                    navigate('/Resume-it');
+                    navigate("/Resume-it");
                 } else {
-                    navigate('/Resume-it');
+                    navigate("/Resume-it");
                 }
-            
             })
             .catch((error) => {
-                console.error('Error signing in with Google:', error);
-                setError('Error signing in with Google. Please try again.');
+                console.error("Error signing in with Google:", error);
+                setError("Error signing in with Google. Please try again.");
             });
     };
 
@@ -76,56 +78,85 @@ function Login() {
     const handleForgotPassword = () => {
         sendPasswordResetEmail(auth, email)
             .then(() => {
-                console.log('Password reset email sent');
+                console.log("Password reset email sent");
                 setForgotPassword(false);
-                setError('Password reset email sent. Please check your inbox.');
+                setError("Password reset email sent. Please check your inbox.");
             })
             .catch((error) => {
-                console.error('Error sending password reset email:', error);
-                setError('Error sending password reset email. Please try again.');
+                console.error("Error sending password reset email:", error);
+                setError("Error sending password reset email. Please try again.");
             });
     };
 
     return (
-        
-<>
-
+        <div className="login-container" > {/* Add a CSS class to the parent element */}
             <form onSubmit={handleSubmit}>
-            <h1>Log in</h1>
+                <h1>Log in</h1>
                 <label>
                     Email:
-                    <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={(event) => setEmail(event.target.value)}
+                    />
                 </label>
                 <br />
                 <label>
                     Password:
-                    <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(event) => setPassword(event.target.value)}
+                    />
                 </label>
                 <br />
-                <button className='log-btn' type="submit" disabled={submitButtonDisabled}>Log in</button>
+                <button
+                    className="bt2"
+                    type="submit"
+                    disabled={submitButtonDisabled}
+                >
+                    Log in
+                </button>
             </form>
-            <p style={{display:'flex',justifyContent:'center',marginTop:'10px'}}><Link to="/signup" >Don't have an account? Sign up</Link></p>
-            <p style={{display:'flex',justifyContent:'center',marginTop:'10px'}}><button onClick={() => setForgotPassword(true)}>Forgot password?</button></p>
+            <p
+                style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}
+            >
+                <Link to="/signup">Don't have an account? Sign up</Link>
+            </p>
+            <p
+                style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}
+            >
+                <div className="aloo">
+                    <button onClick={() => setForgotPassword(true)} className="bt1">
+                        Forgot password?
+                    </button>
+
+                    <button onClick={handleGoogleSignIn} className="bt1">
+                        Log in with Google
+                    </button>
+                </div>
+            </p>
             {forgotPassword && (
-                <div >
+                <div>
                     <p>Enter your email address to reset your password:</p>
-                    <form onSubmit={handleForgotPassword} className='forgot' >
+                    <form onSubmit={handleForgotPassword} className="forgot">
                         <label>
                             Email:
-                            <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
+                            <input
+                                type="email"
+                                value={email}
+                                onChange={(event) => setEmail(event.target.value)}
+                            />
                         </label>
                         <br />
                         <button type="submit">Reset password</button>
                     </form>
                 </div>
             )}
-            <button onClick={handleGoogleSignIn} style={{ display: 'block', margin: '0 auto' ,}}>Log in with Google</button>
+
             {error && <p>{error}</p>}
-            </>
-    ); 
-    
-};
+        </div>
+    );
+}
 
 export default Login;
-
-

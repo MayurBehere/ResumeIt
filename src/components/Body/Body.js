@@ -79,10 +79,13 @@ function Body() {
             />
           ))}
         </div>
+              <button  style={{marginLeft:'410px'}}>
+                Analyze <ArrowDown />
+              </button>
         <ReactToPrint
           trigger={() => {
             return (
-              <button>
+              <button style={{marginRight:'0px'}}>
                 Download <ArrowDown />
               </button>
             );

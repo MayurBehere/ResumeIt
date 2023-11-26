@@ -82,3 +82,37 @@ a {
  .forgot-password button {
   margin-top: 10px;
 }
+.aloo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 20px auto;
+
+}
+.bt1 {
+  margin: 12px;
+  padding: 7px;
+  border-radius: 20px;
+  background-color: #ff00e1;
+  color: #fff;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.bt1:hover {
+  transform: scale(1.1);
+}
+
+.bt2{
+margin: 12px;
+padding: 5px 20px;
+border-radius: 20px;
+background-color: #ff00e1;
+color: #fff;
+border: none;
+transition: transform 0.3s ease;
+}
+.bt2:hover {
+  transform: scale(1.1);
+}
