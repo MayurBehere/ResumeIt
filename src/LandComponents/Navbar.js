@@ -11,7 +11,6 @@ const Navbar = () => {
             <img src={navlogo} alt="Logo" width="80" height="75" className="d-inline-block align-text-top"/>
           </a>
           <div className="d-flex">
-            <button className="btn btn-secondary me-2" type="button" style={{ outline: 'none' }}>Contact Us</button>
             <button className="btn btn-secondary me-2" type="button" style={{ outline: 'none' }}>About Us</button>
            <Link to="/signup"> <button className="btn btn-secondary" type="button" style={{ outline: 'none' }}>Sign Up</button></Link>
           </div>
