@@ -6,7 +6,7 @@
     A Simple Aesthetic Generator you need ! UwU
     <br/>
     <br/>
-    <a href="https://github.com/MayurBehere/ResumeIt">View Demo</a>
+    <a href="https://resumeit.surge.sh">Go to Website</a>
     .
   </p>
 </p>
