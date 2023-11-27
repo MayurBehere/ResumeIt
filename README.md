@@ -143,6 +143,6 @@ Distributed under the MIT License. See [LICENSE](https://github.com/MayurBehere/
 
 ## Acknowledgements
 
-* [Krishnaraj Tadsare](https://github.com/KrishnarajT)
+* [Krishnaraj Thadesar](https://github.com/KrishnarajT)
 * [Saubhaghya Singh](https://github.com/SaubhagyaSingh)
-* [Handy Dev](www.youtube.com/@handydev1)
+* [Handy Dev](www.youtube.com/handydev1)
