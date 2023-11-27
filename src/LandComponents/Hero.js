@@ -13,7 +13,6 @@ const Hero = () => {
                 <p className="lead mb-4">Build beautiful, recruiter-tested resumes in a few clicks! Our resume builder is powerful and easy to use, with a range of amazing functions. Custom-tailor resumes for any job within minutes. Increase your interview chances and rise above the competition.</p>
                 <div className="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5"  >
                     <Link to="/login"><button type="button" className="btn btn-primary btn-lg px-5 me-sm-3" >Build</button></Link>
-                    <a href="https://google.com" target="_blank" rel="noopener noreferrer"><button type="button" className="btn btn-primary btn-lg px-5 me-sm-2 hover-effect">Analyse</button></a>
                 </div>
             </div>
             <div className='Resume'>
