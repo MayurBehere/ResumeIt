@@ -148,4 +148,15 @@
   .hidden {
     display: none;
   }
-  
+    @media screen and (max-width: 600px) {
+    .container {
+      min-width: auto;
+      max-width: 100%;
+      padding: 20px;
+    }
+
+    .col1,
+    .col2 {
+      flex: 1;
+    }
+  }

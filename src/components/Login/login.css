@@ -116,3 +116,15 @@ transition: transform 0.3s ease;
 .bt2:hover {
   transform: scale(1.1);
 }
+@media (max-width: 768px) {
+  /* Add your CSS rules for smaller screens here */
+  .aloo {
+    max-width: 300px;
+  }
+
+  .bt1,
+  .bt2 {
+    margin: 8px;
+    padding: 5px 15px;
+  }
+}

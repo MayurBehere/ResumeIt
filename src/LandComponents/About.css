@@ -287,3 +287,79 @@ justify-content: center;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
 }
+/* Existing code */
+
+@media screen and (max-width: 768px) {
+    /* Styles for screens with a maximum width of 768px */
+    .Aboutus {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Aboutus h2 {
+        font-size: calc(16px + 5vh);
+        line-height: calc(8px + 5vh);
+        margin: 2rem;
+    }
+
+    .Aboutus p {
+        font-size: 1.2rem;
+        margin: 3rem;
+    }
+
+    .Aboutus h3 {
+        font-size: calc(16px + 5vh);
+        line-height: calc(8px + 5vh);
+    }
+
+    .Developers {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .Developer {
+        margin: 0.5rem;
+        padding: 0.5rem;
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .Developer img {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .Developer h4 {
+        font-size: 1.2rem;
+    }
+
+    .Developer p {
+        font-size: 0.9rem;
+    }
+
+    .ContactForm {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        width: 90%;
+        height: auto;
+    }
+
+    .ContactForm input,
+    .ContactForm textarea {
+        margin-bottom: 0.5rem;
+        padding: 0.3rem;
+    }
+
+    .ContactForm button {
+        margin-top: 0.5rem;
+        width: 8rem;
+        height: 2.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Existing code */

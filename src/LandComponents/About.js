@@ -6,8 +6,14 @@ const nishad = require('./nishad.jpg')
 const raghav = require('./raghav.jpg')
 
 const About = () => {
+    const handleGoBack = () => {
+        window.history.back();
+    };
     return (
         <div className='Aboutus'>
+            <div className='Aboutus'>
+            <button onClick={handleGoBack} className='bt1' style={{ position: 'absolute', top: '10px', left: '10px' , padding:'10px 20px' }}>Back</button>
+        </div>
             <h2>About Us</h2>
             <p>
                 We are a group of students from MIT, Pune who have developed this website as a part of our project for the course of Full Stack Dev.

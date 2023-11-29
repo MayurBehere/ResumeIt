@@ -5,6 +5,7 @@ import Signup from './components/SignUp/Signup';
 import Home from './components/Home/Home';
 import Main from './Main';
 import About from './LandComponents/About';
+import Footer from './LandComponents/footer';
 import './App.css';
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
         <Route path="/" element={<Home/>} />
         </Routes>
       </Router>
+      <div>
+      <Footer/> 
+    </div>
     </div>
   );
 }

@@ -22,6 +22,11 @@ function Login() {
     // Define a navigate function using the useNavigate hook from react-router-dom
     const navigate = useNavigate();
 
+    const handleGoBack = () => {
+        // Handle the back button click event here`
+        window.history.back();
+    };
+
     // Define a function to handle form submission
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -89,7 +94,10 @@ function Login() {
     };
 
     return (
-        <div className="login-container" > {/* Add a CSS class to the parent element */}
+        <div className="login-container" > 
+         <div className='Aboutus'>
+            <button onClick={handleGoBack} className='bt1' style={{ position: 'absolute', top: '10px', left: '10px',padding:'10px 20px' }}>Back</button>
+        </div>
             <form onSubmit={handleSubmit}>
                 <h1>Log in</h1>
                 <label>

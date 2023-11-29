@@ -16,7 +16,10 @@ function Signup() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const[submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
-
+  const handleGoBack = () => {
+    // Handle the back button click event here`
+    window.history.back();
+};
   // Defining the handleSubmit function to handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -66,6 +69,9 @@ function Signup() {
   // Rendering the Signup component
   return (
     <div>
+       <div className='Aboutus'>
+            <button onClick={handleGoBack} className='bt1' style={{ position: 'absolute', top: '10px', left: '10px',padding:'10px 20px' }}>Back</button>
+        </div>
       <div id="container">
         <div id="row">
           <div id="col-md-6">

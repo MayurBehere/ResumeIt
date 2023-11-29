@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
-.container{
-    padding: 50px 30px; 
+
+.container {
+    padding: 50px 30px;
     text-align: center;
     width: 100%;
     display: flex;
     gap: 30px;
     align-items: center;
     justify-content: space-evenly;
-    background-color:rgb(252, 206, 255) ;
+    background-color: rgb(252, 206, 255);
     min-height: 80vh;
 }
 
-.heading{
+.heading {
     margin: 0%;
     max-width: 500px;
     color: #2F2E41;
@@ -24,59 +25,66 @@
     font-family: 'Roboto Slab', serif !important;
 }
 
-.heading span{
-        font-size: calc(20px + 7vh);
-        line-height: calc(10px + 7vh);
-        text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff, 0 0 10px #ff00ff, 0 0 98px #ff00ff;
-        color: #6B0C72;
-        font-family: 'Dancing Script', cursive !important;
-        text-align: center;
-        animation: blink 12s infinite;
-        -webkit-animation: blink 12s infinite;
+.heading span {
+    font-size: calc(20px + 7vh);
+    line-height: calc(10px + 7vh);
+    text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff, 0 0 10px #ff00ff, 0 0 98px #ff00ff;
+    color: #6B0C72;
+    font-family: 'Dancing Script', cursive !important;
+    text-align: center;
+    animation: blink 12s infinite;
+    -webkit-animation: blink 12s infinite;
 }
+
 @-webkit-keyframes blink {
-        20%,
-        24%,
-        55% {
-            color: #111;
-            text-shadow: none;
-        }
-    
-        0%,
-        19%,
-        21%,
-        23%,
-        25%,
-        54%,
-        56%,
-        100% {
-            text-shadow: 0 0 5px #cb2ad4, 0 0 15px #d10d7c, 0 0 20px #0fbacd, 0 0 40px #4c0ccd, 0 0 60px #f200ff, 0 0 10px #ff03f2, 0 0 98px #ff36e4;
-            color: #ffffff;
-        }
+    20%,
+    24%,
+    55% {
+        color: #111;
+        text-shadow: none;
+    }
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        text-shadow: 0 0 5px #cb2ad4, 0 0 15px #d10d7c, 0 0 20px #0fbacd, 0 0 40px #4c0ccd, 0 0 60px #f200ff, 0 0 10px #ff03f2, 0 0 98px #ff36e4;
+        color: #ffffff;
+    }
 }
-    
+
 @keyframes blink {
-        20%,
-        24%,
-        55% {
-            color: #111;
-            text-shadow: none;
-        }
-    
-        0%,
-        19%,
-        21%,
-        23%,
-        25%,
-        54%,
-        56%,
-        100% {
-            text-shadow: 0 0 5px #cb06a1, 0 0 15px #ec83f2, 0 0 20px #ea20cc, 0 0 40px #ff857d, 0 0 60px #ff0000, 0 0 10px #fbbafe, 0 0 98px #a511a0;
-            color: #ffffff;
-        }
+    20%,
+    24%,
+    55% {
+        color: #111;
+        text-shadow: none;
+    }
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        text-shadow: 0 0 5px #cb06a1, 0 0 15px #ec83f2, 0 0 20px #ea20cc, 0 0 40px #ff857d, 0 0 60px #ff0000, 0 0 10px #fbbafe, 0 0 98px #a511a0;
+        color: #ffffff;
+    }
 }
-  
-.right img{
+
+.right img {
     width: 500px;
-   
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 768px) {
+    .right img {
+        display: none;
+    } 
 }

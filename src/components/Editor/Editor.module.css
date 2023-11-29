@@ -131,4 +131,60 @@
 .body button:active::before{
     width: 100px;
     height: 100px;
+}@media screen and (max-width: 768px) {
+    .container {
+        min-width: auto;
+        min-height: auto;
+        flex-direction: column;
+        gap: 20px;
+        box-shadow: none;
+        padding-top: 0;
+    }
+
+    .header {
+        display: block;
+        overflow-x: auto;
+        border-bottom: none;
+    }
+
+    .header .section {
+        padding: 10px;
+        border-bottom: none;
+        font-size: 0.9rem;
+        white-space: normal;
+    }
+
+    .body {
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .detail .row,
+    .detail .column {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .chips {
+        gap: 10px;
+    }
+
+    .chip p {
+        margin-top: 8px;
+    }
+
+    .body button {
+        width: auto;
+    }
+
+    .body button::before {
+        width: 0;
+        height: 0;
+    }
+
+    .body button:hover::before,
+    .body button:active::before {
+        width: 0;
+        height: 0;
+    }
 }
