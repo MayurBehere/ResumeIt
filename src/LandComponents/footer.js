@@ -4,7 +4,7 @@ const footer = () => {
   return (
     <div>
        <div style={{textAlign: 'center', margin: '10px'}}>
-            &copy; 2021 ResumeIt
+            &copy; 2023 ResumeIt
         </div>
     </div>
   )
